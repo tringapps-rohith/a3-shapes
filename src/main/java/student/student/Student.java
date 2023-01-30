@@ -5,24 +5,24 @@ class Student
 {
         private String name;
         private String grade;
-        private double GPA;
+        private double gpa;
         public Student()
         {
         }
-        public Student(String name,String grade,double GPA)
+        public Student(String name,String grade,double gpa)
         {
                 this.name=name;
                 this.grade=grade;
-                this.GPA=GPA;
+                this.gpa=gpa;
         }
-        public double updateGPA(double newGPA)
+        public double updateGPA(double newgpa)
         {
-                this.GPA=newGPA;
-                return this.GPA;
+                this.gpa=newgpa;
+                return this.gpa;
         }
         public void display()
         {
-                l.log(Level.INFO,()-> "\nStudent name: "+name+"\nGrade: "+grade+"\nCurrent GPA: "+GPA);
+                l.log(Level.INFO,()-> "\nStudent name: "+name+"\nGrade: "+grade+"\nCurrent GPA: "+gpa);
         }
         public static void main(String ...args)
         {
@@ -33,13 +33,13 @@ class Student
                 l.info("Enter grade\n");
                 String grade=sin.next();
                 l.info("Enter GPA\n");
-                double GPA=sin.nextDouble();
-                Student s=new Student(name,grade,GPA);
+                double gpa=sin.nextDouble();
+                Student s=new Student(name,grade,gpa);
                 s.display();
                 l.info("\nEnter the GPA to update\n");
-                double newGPA=sin.nextDouble();
-                s.updateGPA(newGPA);
+                double newgpa=sin.nextDouble();
+                s.updateGPA(newgpa);
                 s.display();
-                l.log(Level.INFO,()-> "\n"+name+" has a "+s.updateGPA(newGPA)+" GPA");
+                l.log(Level.INFO,()-> "\n"+name+" has a "+s.updateGPA(newgpa)+" GPA");
         }
 }
